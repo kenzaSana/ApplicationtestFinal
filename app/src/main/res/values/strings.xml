@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Application test</string>
+    <string name="email_format_error" />
+</resources>
