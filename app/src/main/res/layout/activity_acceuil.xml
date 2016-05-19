@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".View.acceuil">
+    tools:context=".View.acceuil"
+    android:background="@drawable/kj">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,7 +17,8 @@
         android:text="ACCEUIL"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,18 +27,20 @@
         android:text="Bienvenue , que voulez vous faire?"
         android:id="@+id/textView3"
         android:layout_below="@+id/textView"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="40dp"
+        android:textColor="#000000" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="importer image"
         android:id="@+id/button3"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/textView"
-        android:layout_toStartOf="@+id/textView"
         android:textSize="15sp"
-        android:background="#472bd8" />
+        android:textColor="#0097A7"
+        android:layout_below="@+id/id_login"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="125dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -47,7 +51,7 @@
         android:layout_toEndOf="@+id/textView"
         android:textSize="15sp"
         android:layout_toRightOf="@+id/textView"
-        android:background="#472bd8" />
+        android:textColor="#0097A7" />
 
     <Button
         android:layout_width="wrap_content"
@@ -59,9 +63,9 @@
         android:layout_alignStart="@+id/button4"
         android:layout_marginTop="75dp"
         android:textSize="15sp"
-        android:background="#472bd8"
         android:layout_alignRight="@+id/button4"
-        android:layout_alignEnd="@+id/button4" />
+        android:layout_alignEnd="@+id/button4"
+        android:textColor="#0097A7" />
 
     <Button
         android:layout_width="wrap_content"
@@ -74,7 +78,7 @@
         android:layout_toLeftOf="@+id/textView"
         android:layout_toStartOf="@+id/textView"
         android:textSize="15sp"
-        android:background="#472bd8" />
+        android:textColor="#0097A7" />
 
     <TextView
         android:layout_width="wrap_content"

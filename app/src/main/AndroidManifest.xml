@@ -5,6 +5,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,20 +27,13 @@
         <activity android:name=".View.upload_image" />
         <activity android:name=".View.publier" />
         <activity android:name=".View.consulter_image" />
-        <activity android:name=".View.webcam" />
-        <activity android:name=".View.design"></activity>
+        <activity android:name=".View.AudioRecordingActivity" />
+        <activity android:name=".Notification" />
+        <activity android:name=".View.sign2" />
         <activity
-            android:name=".View.splashActivity"
-            android:label="@string/app_name"
-            android:launchMode="standard"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+            android:name=".View.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

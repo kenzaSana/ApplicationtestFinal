@@ -1,11 +1,11 @@
 package com.example.kenzack.applicationtest.View;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
 import com.example.kenzack.applicationtest.R;
 
-public class consulter_image extends AppCompatActivity {
+public class consulter_image extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

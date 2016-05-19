@@ -21,7 +21,7 @@ public class importer_image extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_importer_image);
         login=(EditText)findViewById(R.id.editText);
-       cnx=(Button)findViewById(R.id.button7);
+       cnx=(Button)findViewById(R.id.button2);
         cnx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,7 +32,7 @@ public class importer_image extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        insc=(Button)findViewById(R.id.button8);
+        insc=(Button)findViewById(R.id.button3);
         insc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,8 +42,8 @@ public class importer_image extends AppCompatActivity {
         });
 
         pass=(EditText)findViewById(R.id.editText2);
-        t1=(TextView)findViewById(R.id.textView2);
-        t2=(TextView)findViewById(R.id.textView4);
+        t1=(TextView)findViewById(R.id.textView);
+        t2=(TextView)findViewById(R.id.textView2);
 
     }
 }

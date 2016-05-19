@@ -33,8 +33,8 @@ public class formulaire extends AppCompatActivity {
         Tlogin=(EditText)findViewById(R.id.editText3);
         Tpass=(EditText)findViewById(R.id.editText4);
         Tc=(EditText)findViewById(R.id.editText5);
-        Temail=(EditText)findViewById(R.id.editText6);
-        cnx=(Button)findViewById(R.id.button);
+        Temail=(EditText)findViewById(R.id.editText7);
+        cnx=(Button)findViewById(R.id.button4);
         final AlertDialog.Builder abd = new AlertDialog.Builder(this);
         abd.setTitle("erreur");
         abd.setPositiveButton("ok", null);
@@ -64,10 +64,9 @@ public class formulaire extends AppCompatActivity {
                     registerService.register(login,email,pass);
                     Toast toast = Toast.makeText(getApplicationContext(), "Inscription réussie !", Toast.LENGTH_SHORT);
                     toast.show();
-                    Intent intent = new Intent(formulaire.this, acceuil.class);
+                    Intent intent = new Intent(formulaire.this, sign2.class);
                     intent.putExtra(login, Tlogin.getText().toString());
                     startActivity(intent);
-
                 }
 
             }

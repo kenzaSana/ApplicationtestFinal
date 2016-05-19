@@ -29,4 +29,5 @@ dependencies {
     compile 'com.j256.ormlite:ormlite-android:4.48'
     compile 'mysql:mysql-connector-java:5.1.6'
     compile 'junit:junit:4.12'
+    compile 'com.android.support:design:23.3.0'
 }
