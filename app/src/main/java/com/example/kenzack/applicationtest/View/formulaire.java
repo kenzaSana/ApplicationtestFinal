@@ -64,7 +64,7 @@ public class formulaire extends AppCompatActivity {
                     registerService.register(login,email,pass);
                     Toast toast = Toast.makeText(getApplicationContext(), "Inscription réussie !", Toast.LENGTH_SHORT);
                     toast.show();
-                    Intent intent = new Intent(formulaire.this, sign2.class);
+                    Intent intent = new Intent(formulaire.this, acceuil.class);
                     intent.putExtra(login, Tlogin.getText().toString());
                     startActivity(intent);
                 }

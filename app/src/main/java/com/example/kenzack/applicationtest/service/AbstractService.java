@@ -22,7 +22,7 @@ public class AbstractService {
         try {
            // InputStream in = new FileInputStream(fichier_proprietes);
             //properties.load(in);
-            String IP_MYSQL = "192.168.1.20";
+            String IP_MYSQL = "192.168.1.23";
             String DB ="DEV";
             String LOGIN_MYSQL = "kniza";
             String PASSWORD_MYSQL = "kenza";

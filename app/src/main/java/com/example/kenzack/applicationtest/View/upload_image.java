@@ -2,7 +2,9 @@ package com.example.kenzack.applicationtest.View;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -58,10 +60,10 @@ public class upload_image extends Activity implements View.OnClickListener {
     }
 
 
-    //private boolean hasCamera(){
-    //    return getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY);
+    private boolean hasCamera(){
+     return getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY);
 
-    //}
+    }
 
 
     @Override
@@ -90,13 +92,11 @@ public class upload_image extends Activity implements View.OnClickListener {
             });
 
 
-        }   //else if(requestCode==Reqest_image_capture && resultCode==RESULT_OK){
-                //Bundle extras=data.getExtras();
-              //  Bitmap photo=(Bitmap)extras.get("data");
-               // image.setImageBitmap(photo);
-
-
-        //}
+        }   else if(requestCode==Reqest_image_capture && resultCode==RESULT_OK){
+                Bundle extras=data.getExtras();
+                Bitmap photo=(Bitmap)extras.get("data");
+                image.setImageBitmap(photo);
+        }
 
     }
 

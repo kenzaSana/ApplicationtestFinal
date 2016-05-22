@@ -20,8 +20,8 @@ import java.sql.SQLException;
 
 public class InitDatabaseDev {
     private final String DB_NAME = "DEV";
-    private final String LOGIN_MYSQL ="root";
-    private final String PASSWORD_MYSQL ="";
+    private final String LOGIN_MYSQL ="kniza";
+    private final String PASSWORD_MYSQL ="kenza";
     private final String IP_MYSQL = "localhost";
 
     @Test
