@@ -16,6 +16,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.kenzack.applicationtest.R;
+import com.example.kenzack.applicationtest.model.MyApplication;
+import com.example.kenzack.applicationtest.model.Session;
+import com.example.kenzack.applicationtest.model.Utilisateur;
 import com.example.kenzack.applicationtest.service.ImageStorageService;
 
 public class upload_image extends Activity implements View.OnClickListener {
@@ -35,7 +38,7 @@ public class upload_image extends Activity implements View.OnClickListener {
         appareil=(Button)findViewById(R.id.button9);
 
         //if(!hasCamera())
-            // appareil.setEnabled(false);
+        // appareil.setEnabled(false);
 
         appareil.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +64,7 @@ public class upload_image extends Activity implements View.OnClickListener {
 
 
     private boolean hasCamera(){
-     return getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY);
+        return getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY);
 
     }
 
@@ -76,7 +79,7 @@ public class upload_image extends Activity implements View.OnClickListener {
             String[] filePath = {MediaStore.Images.Media.DATA};
             Cursor cursor = getContentResolver().query(pickedImage, filePath, null, null, null);
             cursor.moveToFirst();
-           final  String imagePath = cursor.getString(cursor.getColumnIndex(filePath[0]));
+            final  String imagePath = cursor.getString(cursor.getColumnIndex(filePath[0]));
             image.setImageBitmap(BitmapFactory.decodeFile(imagePath));
             final Drawable drawable = image.getDrawable();
             cursor.close();
@@ -85,17 +88,17 @@ public class upload_image extends Activity implements View.OnClickListener {
                 public void onClick(View v) {
                     Intent intent = new Intent(upload_image.this, com.example.kenzack.applicationtest.View.publier.class);
                     ImageStorageService iSS = new ImageStorageService() ;
-                    iSS.storeImage(imagePath);
+                    Utilisateur proprietaire = getSession().getUtilisateur();
+                    iSS.storeImage(proprietaire,imagePath);
                     startActivity(intent);
-
                 }
             });
 
 
         }   else if(requestCode==Reqest_image_capture && resultCode==RESULT_OK){
-                Bundle extras=data.getExtras();
-                Bitmap photo=(Bitmap)extras.get("data");
-                image.setImageBitmap(photo);
+            Bundle extras=data.getExtras();
+            Bitmap photo=(Bitmap)extras.get("data");
+            image.setImageBitmap(photo);
         }
 
     }
@@ -106,5 +109,10 @@ public class upload_image extends Activity implements View.OnClickListener {
 
         startActivityForResult(i,LAOD_IMage_Results);
 
+    }
+
+    private Session getSession(){
+        MyApplication myApplication = (MyApplication)this.getApplication();
+        return myApplication.getSession();
     }
 }

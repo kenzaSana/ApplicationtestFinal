@@ -21,8 +21,14 @@ public class connexion extends AppCompatActivity {
     TextView t1,t2;
     EditText login , pass;
 
+
+    private void initSession(Session session){
+        MyApplication myApplication = (MyApplication)this.getApplication();
+        myApplication.setSession(session);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_importer_image);
         login=(EditText)findViewById(R.id.editText);
@@ -40,8 +46,7 @@ public class connexion extends AppCompatActivity {
                     Utilisateur u = new Utilisateur();
                     u.setLogin(Extra_login);
                     session.setUtilisateur(u);
-                    MyApplication myApplication = (MyApplication)connexion.this.getApplication();
-                    myApplication.setSession(session);
+                    initSession(session);
                     // inetent permet de passer d'une activité a une autre
                     Intent intent = new Intent(connexion.this,acceuil.class);
                     //putExtra permet d'inserer qlq chose dans l autre activité , ici je vous qu'eele se rappelle du login
