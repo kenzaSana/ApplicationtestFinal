@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".View.acceuil"
-    android:background="@drawable/kj">
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,6 +74,29 @@
         android:layout_toLeftOf="@+id/textView"
         android:layout_toStartOf="@+id/textView"
         android:layout_marginTop="57dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ajouter un ami"
+        android:id="@+id/buttonAjouterAmi"
+        android:textSize="15sp"
+        android:textColor="#0097A7"
+        android:layout_below="@+id/button5"
+        android:layout_toLeftOf="@+id/textView"
+        android:layout_toStartOf="@+id/textView"
+        android:layout_marginTop="57dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Invitations d&apos;ajout"
+        android:id="@+id/buttonVoirInvitations"
+        android:textSize="15sp"
+        android:textColor="#0097A7"
+        android:layout_alignBottom="@+id/buttonAjouterAmi"
+        android:layout_alignLeft="@+id/button6"
+        android:layout_alignStart="@+id/button6" />
 
     <TextView
         android:layout_width="wrap_content"

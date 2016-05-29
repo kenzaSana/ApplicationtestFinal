@@ -10,7 +10,7 @@
         android:required="true" />
 
     <application
-        android:name="model.MyApplication"
+        android:name=".model.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -28,9 +28,9 @@
         <activity android:name=".View.upload_image" />
         <activity android:name=".View.publier" />
         <activity android:name=".View.consulter_image" />
-        <activity android:name=".View.AudioRecordingActivity" />
         <activity android:name=".Notification" />
-        <activity android:name=".View.sign2" />
+        <activity android:name=".View.Invitations" />
+        <activity android:name=".View.AjouterAmi" />
         <activity
             android:name=".View.ScrollingActivity"
             android:label="@string/title_activity_scrolling"

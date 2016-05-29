@@ -14,9 +14,10 @@ import com.example.kenzack.applicationtest.R;
 public class acceuil extends AppCompatActivity {
     final String Extra_login="user_login";
     TextView T1,T2,T3;
-    Button upload,voir_image,voir_ami,dcnx;
+    Button upload,voir_image,voir_ami,dcnx,ajout_ami,voir_invitations;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acceuil);
         Intent intent= getIntent();
@@ -25,6 +26,7 @@ public class acceuil extends AppCompatActivity {
            // elle permet tbiyin le login li bghitha t39l 3lih
             T3.setText(intent.getStringExtra(Extra_login));
         }
+
         T1=(TextView) findViewById(R.id.textView);
         T2=(TextView) findViewById(R.id.textView3);
         dcnx=(Button)findViewById(R.id.button6);
@@ -54,6 +56,23 @@ public class acceuil extends AppCompatActivity {
         });
         voir_image=(Button)findViewById(R.id.button4);
         voir_ami=(Button)findViewById(R.id.button5);
+
+        ajout_ami=(Button)findViewById(R.id.buttonAjouterAmi);
+        ajout_ami.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(acceuil.this,AjouterAmi.class);
+                startActivity(intent);
+            }
+        });
+        voir_invitations=(Button)findViewById(R.id.buttonVoirInvitations);
+        voir_invitations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(acceuil.this,Invitations.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

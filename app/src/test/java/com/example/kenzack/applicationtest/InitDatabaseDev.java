@@ -5,6 +5,7 @@ package com.example.kenzack.applicationtest;
  */
 
 import com.example.kenzack.applicationtest.model.Droit;
+import com.example.kenzack.applicationtest.model.Friendship;
 import com.example.kenzack.applicationtest.model.Image;
 import com.example.kenzack.applicationtest.model.Utilisateur;
 import com.j256.ormlite.dao.Dao;
@@ -20,8 +21,8 @@ import java.sql.SQLException;
 
 public class InitDatabaseDev {
     private final String DB_NAME = "DEV";
-    private final String LOGIN_MYSQL ="kniza";
-    private final String PASSWORD_MYSQL ="kenza";
+    private final String LOGIN_MYSQL ="root";
+    private final String PASSWORD_MYSQL ="helix";
     private final String IP_MYSQL = "localhost";
 
     @Test
@@ -35,6 +36,7 @@ public class InitDatabaseDev {
         TableUtils.createTable(connectionSource, Utilisateur.class);
         TableUtils.createTable(connectionSource, Image.class);
         TableUtils.createTable(connectionSource, Droit.class);
+        TableUtils.createTable(connectionSource, Friendship.class);
         connectionSource.close();
     }
 }

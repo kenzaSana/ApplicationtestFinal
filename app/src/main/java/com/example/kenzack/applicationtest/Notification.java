@@ -23,7 +23,7 @@ public class Notification extends ActionBarActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                notification.setSmallIcon(R.drawable.ic_menu_gallery);
+                //notification.setSmallIcon(R.drawable.ic_menu_gallery);
                 notification.setTicker("this is the ticker");
                 notification.setWhen(System.currentTimeMillis());
                 notification.setContentTitle("here is the title");
