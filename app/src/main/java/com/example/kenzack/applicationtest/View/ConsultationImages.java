@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -117,10 +118,8 @@ public class ConsultationImages extends Activity {
     private void createImageFile(String path,Image image) {
         FileOutputStream fileOuputStream = null;
         try {
-            File file = new File(path+System.currentTimeMillis()+image.getExtension());
-            fileOuputStream = new FileOutputStream(file);
-            fileOuputStream.write(image.getImage());
-            fileOuputStream.close();
+            Bitmap bitmap = BitmapFactory.decodeByteArray(image.getImage(),0,image.getImage().length);
+            MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, image.getNom() , image.getProprietaire().getLogin());
 
         } catch (Exception e) {
             e.printStackTrace();
