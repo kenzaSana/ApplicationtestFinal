@@ -14,18 +14,13 @@ import com.example.kenzack.applicationtest.R;
 public class acceuil extends AppCompatActivity {
     final String Extra_login="user_login";
     TextView T1,T2,T3;
-    Button upload,voir_image,voir_ami,dcnx,ajout_ami,voir_invitations;
+    Button upload,voir_image,voir_ami,dcnx,ajout_ami,voir_invitations,consulter_images;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acceuil);
         Intent intent= getIntent();
-        T3=(TextView)findViewById(R.id.id_login);
-        if(intent!=null){
-           // elle permet tbiyin le login li bghitha t39l 3lih
-            T3.setText(intent.getStringExtra(Extra_login));
-        }
 
         T1=(TextView) findViewById(R.id.textView);
         T2=(TextView) findViewById(R.id.textView3);
@@ -70,6 +65,14 @@ public class acceuil extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(acceuil.this,Invitations.class);
+                startActivity(intent);
+            }
+        });
+        consulter_images=(Button)findViewById(R.id.consulterImageButton);
+        consulter_images.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(acceuil.this,ConsultationImages.class);
                 startActivity(intent);
             }
         });

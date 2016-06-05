@@ -1,5 +1,6 @@
 package com.example.kenzack.applicationtest.View;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -8,20 +9,23 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.StrictMode;
 import android.provider.MediaStore;
+
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import com.example.kenzack.applicationtest.R;
 import com.example.kenzack.applicationtest.model.MyApplication;
 import com.example.kenzack.applicationtest.model.Session;
 import com.example.kenzack.applicationtest.model.Utilisateur;
 import com.example.kenzack.applicationtest.service.ImageStorageService;
 
-public class upload_image extends Activity implements View.OnClickListener {
+public class upload_image extends Activity implements View.OnClickListener{
 
     private static int LAOD_IMage_Results=1;
     static final int Reqest_image_capture=1;
@@ -32,7 +36,8 @@ public class upload_image extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_image);
-
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         image=(ImageView)findViewById(R.id.imageView);
         gallerie=(Button)findViewById(R.id.button2);
         appareil=(Button)findViewById(R.id.button9);
@@ -72,8 +77,6 @@ public class upload_image extends Activity implements View.OnClickListener {
     @Override
     protected void onActivityResult(int requestCode , int resultCode , Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
         if (requestCode == LAOD_IMage_Results && resultCode == RESULT_OK && data != null) {
             Uri pickedImage = data.getData();
             String[] filePath = {MediaStore.Images.Media.DATA};
@@ -100,7 +103,6 @@ public class upload_image extends Activity implements View.OnClickListener {
             Bitmap photo=(Bitmap)extras.get("data");
             image.setImageBitmap(photo);
         }
-
     }
 
     @Override

@@ -9,7 +9,10 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    public void addition_isCorrect() {
+        String nom="ab.de.png";
+        String[] array = nom.split(".");
+        String s = array[array.length-1];
+        String ss;
     }
 }

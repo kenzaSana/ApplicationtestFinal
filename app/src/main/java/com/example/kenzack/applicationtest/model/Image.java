@@ -11,6 +11,8 @@ public class Image {
     private int id;
     @DatabaseField
     private String nom;
+    @DatabaseField
+    private String extension;
     @DatabaseField(dataType= DataType.BYTE_ARRAY,columnDefinition = "LONGBLOB")
     private byte[] image;
     @DatabaseField(foreign = true, foreignAutoRefresh = true)
@@ -48,6 +50,12 @@ public class Image {
         this.image = image;
     }
 
+    public String getExtension() {
+        return extension;
+    }
 
+    public void setExtension(String extension) {
+        this.extension = extension;
+    }
 }
 
